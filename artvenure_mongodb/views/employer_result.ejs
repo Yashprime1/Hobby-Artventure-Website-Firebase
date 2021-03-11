@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>ArtVenture</title>
+
+    <link rel="stylesheet" type="text/css" href="/assets/styles/project.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/assets/styles/basicpagestyle.css" />
+
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col l4 s4 m4"></div>
+            <div class="col l4 s4 m4 center">
+                <img class=" z-depth-5 responsive-img" style="margin:20px" src="/assets/images/artventure_logo.jpeg">
+            </div>
+            <div class="col l4 s4 m4"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <%var i; %>
+        <div class="row">
+            <% for (i = 0; i < l.length ; i++) { %>
+            <div class="col s12 m4 l4">
+                <div class="card medium z-depth-5">
+                    <div class="card-image">
+                        <%if(l[i]['field']=='Dancer'){ %>
+                        <img src="/assets/images/dancer.gif" class="responsive-img">
+                        <% } %>
+                        <%if(l[i]['field']=='Singer'){ %>
+                        <img src="/assets/images/singer.gif" class="responsive-img">
+                        <% } %>
+                        <%if(l[i]['field']=='Musician'){ %>
+                        <img src="/assets/images/musician.gif" class="responsive-img">
+                        <% } %>
+                        <span class="card-title" style="color:black"><%= l[i]['name']   %></span>
+                    </div>
+                    <div class="card-content">
+                        <p>I am a <%= l[i]['field'] %>. I  rate my confidence to be <%= l[i]['rate'] %>% in it.My
+                            Email is <%= l[i]['email'] %>. My phone is <%= l[i]['telephone'] %></p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col l4 s4 m4"></div>
+            <div class="col l4 s4 m4 center">
+                <a href="/"><button id="submit"  class="btn-floating btn-large waves-effect waves-light"><i
+                        class="fas fa-arrow-left"></i></button></a>
+            </div>
+            <div class="col l4 s4 m4">
+            </div>
+        </div>
+    </div>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</html>
